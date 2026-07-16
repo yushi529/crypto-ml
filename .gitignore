@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# uv
+# (uv.lock はコミットする)
+
+# データ・成果物
+data/
+*.csv
+*.parquet
+!data/.gitkeep
+
+# 環境変数・秘密情報
+.env
+*.key
+
+# エディタ / OS
+.DS_Store
+.ipynb_checkpoints/

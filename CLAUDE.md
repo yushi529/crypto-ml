@@ -9,24 +9,31 @@
 
 ## 開発環境
 
+- パッケージ/環境管理: **uv**（`pyproject.toml` + `uv.lock`）。Python 3.12。
 - Dev Container: `mcr.microsoft.com/devcontainers/base:ubuntu24.04` をベースイメージとして使用（`.devcontainer/devcontainer.json`）。
 - ホスト: WSL2 上の Linux。
 
 ## コマンド
 
-<!-- コード追加後、実際に使うコマンドをここに記載する。例:
-- セットアップ: `pip install -r requirements.txt` など
-- テスト: `pytest`
-- Lint / Format: `ruff check .` / `ruff format .`
-- 学習の実行 / 推論: プロジェクトのエントリポイント
--->
-まだ定義されていません。
+- セットアップ（依存の同期）: `uv sync`
+- 依存の追加: `uv add <package>`
+- スクリプト実行: `uv run python -m <module>`
+- OHLCV 取得の例:
+  ```bash
+  uv run python -m src.data.fetch_ohlcv \
+      --symbol BTC/USDT --timeframe 1h \
+      --since 2024-01-01 --output data/btc_usdt_1h.csv
+  ```
 
 ## アーキテクチャ / 構成
 
-<!-- モジュール構成、データフロー（データ取得 → 前処理 → 特徴量 → 学習 → 評価 → 推論）、
-主要な設計判断をここに記載する。 -->
-まだ定義されていません。
+想定するデータフロー: データ取得 → 前処理 → 特徴量 → 学習 → 評価 → 推論。
+
+- `src/data/fetch_ohlcv.py` — ccxt 経由で取引所（既定 Binance）から OHLCV を
+  取得。API の本数上限を超える範囲は `since`→`until` でページネーション取得し、
+  重複除去・時刻順ソート済みの `pandas.DataFrame`（UTC の DatetimeIndex）で返す。
+  CSV / Parquet 保存に対応。CLI (`python -m src.data.fetch_ohlcv`) 兼ライブラリ。
+- `data/` — 取得データの保存先（`.gitignore` 済み、`.gitkeep` のみ追跡）。
 
 ## 運用メモ
 

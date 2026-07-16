@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(pip3 --version)",
+      "Bash(python3 -c \"import ccxt; print\\('ccxt', ccxt.__version__\\)\")",
+      "Bash(python3 -c \"import pandas; print\\('pandas', pandas.__version__\\)\")",
+      "Read(//usr/bin/**)",
+      "Bash(command -v apt-get)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
