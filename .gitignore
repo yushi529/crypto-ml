@@ -7,11 +7,15 @@ venv/
 # uv
 # (uv.lock はコミットする)
 
-# データ・成果物
-data/
+# データ・成果物（リポジトリ直下の data/ のみ。src/data は対象外）
+/data/
 *.csv
 *.parquet
-!data/.gitkeep
+!/data/.gitkeep
+
+# Claude Code のローカル設定・一時ファイル
+.claude/settings.local.json
+.claude/*.tmp.*
 
 # 環境変数・秘密情報
 .env
