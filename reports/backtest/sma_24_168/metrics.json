@@ -1,0 +1,36 @@
+{
+  "strategy": {
+    "fast_window": 24,
+    "slow_window": 168,
+    "fee_rate": 0.001,
+    "slippage_rate": 0.0002,
+    "periods_per_year": 8760
+  },
+  "metrics": {
+    "start": "2025-01-01T00:00:00+00:00",
+    "end": "2026-07-17T01:00:00+00:00",
+    "bars": 13490,
+    "total_return": -0.45886128763523426,
+    "gross_total_return": -0.35594952940592395,
+    "cost_drag": -0.10291175822931031,
+    "cagr": -0.3290546166435512,
+    "max_drawdown": -0.5142857367673541,
+    "sharpe_ratio": -1.243975179743985,
+    "sortino_ratio": -1.1074687773825806,
+    "annualized_volatility": 0.2873189003913166,
+    "calmar_ratio": -0.6398283932816994,
+    "benchmark_total_return": -0.32684880712244724,
+    "benchmark_cagr": -0.22679121990412343,
+    "excess_total_return": -0.13201248051278702,
+    "exposure": 0.4927353595255745,
+    "trade_count": 73,
+    "closed_trade_count": 72,
+    "win_rate": 0.2602739726027397,
+    "profit_factor": 0.5397953087713702,
+    "average_trade_return": -0.007803059377339657,
+    "average_holding_hours": 91.04109589041096,
+    "max_drawdown_duration_hours": 13025,
+    "total_turnover": 145.0,
+    "estimated_cost_sum": 0.17400000000000002
+  }
+}
